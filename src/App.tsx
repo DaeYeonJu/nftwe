@@ -21,26 +21,14 @@ const App: FC = () => {
     }
   };
 
-  const getBalanceOf = async () => {
-    const response = await mintAnimalTokenContract.methods
-      .balanceOf(account)
-      .call();
-
-    console.log(response);
-  };
-
   useEffect(() => {
     getAccount();
-
-    if (account) {
-      getBalanceOf();
-    }
   }, [account]);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Main account={account} />} />
       </Routes>
     </BrowserRouter>
   );
