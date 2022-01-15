@@ -141,6 +141,42 @@ const mintAnimalTokenAbi: AbiItem[] = [
   {
     inputs: [
       {
+        internalType: "address",
+        name: "_animalTokenOwner",
+        type: "address",
+      },
+    ],
+    name: "getAnimalTokens",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint256",
+            name: "animalTokenId",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "animalType",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "animalPrice",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct MintAnimalToken.AnimalTokenData[]",
+        name: "",
+        type: "tuple[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "uint256",
         name: "tokenId",
         type: "uint256",
@@ -272,6 +308,19 @@ const mintAnimalTokenAbi: AbiItem[] = [
     type: "function",
   },
   {
+    inputs: [],
+    name: "saleAnimalToken",
+    outputs: [
+      {
+        internalType: "contract SaleAnimalToken",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "address",
@@ -285,6 +334,19 @@ const mintAnimalTokenAbi: AbiItem[] = [
       },
     ],
     name: "setApprovalForAll",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_saleAnimalToken",
+        type: "address",
+      },
+    ],
+    name: "setSaleAnimalToken",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -424,37 +486,6 @@ const saleAnimalTokenAbi: AbiItem[] = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "_animalTokenId",
-        type: "uint256",
-      },
-    ],
-    name: "purchaseAnimalToken",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_animalTokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
-    ],
-    name: "setForSaleAnimalToken",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
         internalType: "address",
         name: "_mintAnimalTokenAddress",
         type: "address",
@@ -472,6 +503,25 @@ const saleAnimalTokenAbi: AbiItem[] = [
       },
     ],
     name: "animalTokenPrices",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_animalTokenId",
+        type: "uint256",
+      },
+    ],
+    name: "getAnimalTokenPrice",
     outputs: [
       {
         internalType: "uint256",
@@ -527,11 +577,42 @@ const saleAnimalTokenAbi: AbiItem[] = [
     stateMutability: "view",
     type: "function",
   },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_animalTokenId",
+        type: "uint256",
+      },
+    ],
+    name: "purchaseAnimalToken",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_animalTokenId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_price",
+        type: "uint256",
+      },
+    ],
+    name: "setForSaleAnimalToken",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
 ];
 
-const mintAnimalTokenAddress = "0xBa117f27cc04762D26700976DD19Eb7D0aEC6B99";
+const mintAnimalTokenAddress = "0xA22c36d5e343966dFB34Dad510cf3C0767bB859E";
 export const saleAnimalTokenAddress =
-  "0x3884cDFad20C0a99ABF10B53D27113ae34421fbC";
+  "0x50a891dC603ea85548CAf26d0D51C52f4B8Fa460";
 
 export const web3 = new Web3(window.ethereum);
 
