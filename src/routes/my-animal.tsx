@@ -37,8 +37,6 @@ const MyAnimal: FC<MyAnimalProps> = ({ account }) => {
         });
       });
 
-      console.log(tempAnimalCardArray);
-
       setAnimalCardArray(tempAnimalCardArray);
     } catch (error) {
       console.error(error);
