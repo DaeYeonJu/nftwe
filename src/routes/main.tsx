@@ -24,7 +24,7 @@ const Main: FC<MainProps> = ({ account }) => {
           .call();
 
         const animalTokenId = await mintAnimalTokenContract.methods
-          .tokenOfOwnerByIndex(account, parseInt(balanceLength.length, 10) - 1)
+          .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
           .call();
 
         const animalType = await mintAnimalTokenContract.methods
