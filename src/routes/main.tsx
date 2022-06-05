@@ -22,6 +22,7 @@ const Main: FC<MainProps> = ({ account }) => {
         const balanceLength = await mintAnimalTokenContract.methods
           .balanceOf(account)
           .call();
+          console.log(balanceLength);
 
         const animalTokenId = await mintAnimalTokenContract.methods
           .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
@@ -30,6 +31,8 @@ const Main: FC<MainProps> = ({ account }) => {
         const animalType = await mintAnimalTokenContract.methods
           .animalTypes(animalTokenId)
           .call();
+          console.log(animalTokenId);
+          console.log(animalType);
 
         setNewAnimalType(animalType);
       }
@@ -50,7 +53,7 @@ const Main: FC<MainProps> = ({ account }) => {
         {newAnimalType ? (
           <AnimalCard animalType={newAnimalType} />
         ) : (
-          <Text>Let's mint Animal Card!!!</Text>
+          <Text>Let's mint!!!</Text>
         )}
       </Box>
       <Button mt={4} size="sm" colorScheme="blue" onClick={onClickMint}>

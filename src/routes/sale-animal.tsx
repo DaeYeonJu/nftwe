@@ -12,39 +12,29 @@ interface SaleAnimalProps {
 }
 
 const SaleAnimal: FC<SaleAnimalProps> = ({ account }) => {
-  const [saleAnimalCardArray, setSaleAnimalCardArray] = useState<
-    IMyAnimalCard[]
-  >();
+    const [saleAnimalCardArray, setSaleAnimalCardArray] = useState<IMyAnimalCard[]>();
 
-  const getOnSaleAnimalTokens = async () => {
-    try {
-      const onSaleAnimalTokenArrayLength = await saleAnimalTokenContract.methods
-        .getOnSaleAnimalTokenArrayLength()
-        .call();
+    const getOnSaleAnimalTokens = async () => {
+        try {
+            const onSaleAnimalTokenArrayLength = 5;
 
-      const tempOnSaleArray: IMyAnimalCard[] = [];
+            const tempOnSaleArray: IMyAnimalCard[] = [];
 
-      for (let i = 0; i < parseInt(onSaleAnimalTokenArrayLength, 10); i++) {
-        const animalTokenId = await saleAnimalTokenContract.methods
-          .onSaleAnimalTokenArray(i)
-          .call();
+            for (let i = 0; i <3; i++) {
+                const animalTokenId = await saleAnimalTokenContract.methods.onSaleAnimalTokenArray(i).call();
+            
+                const animalType = await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call();
 
-        const animalType = await mintAnimalTokenContract.methods
-          .animalTypes(animalTokenId)
-          .call();
+                const animalPrice = await saleAnimalTokenContract.methods.animalTokenPrices(animalTokenId).call();
 
-        const animalPrice = await saleAnimalTokenContract.methods
-          .animalTokenPrices(animalTokenId)
-          .call();
+                tempOnSaleArray.push({ animalTokenId, animalType, animalPrice });
+            }
 
-        tempOnSaleArray.push({ animalTokenId, animalType, animalPrice });
-      }
-
-      setSaleAnimalCardArray(tempOnSaleArray);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+            setSaleAnimalCardArray(tempOnSaleArray);
+        }   catch (error) {
+            console.error(error);
+        }
+    };
 
   useEffect(() => {
     getOnSaleAnimalTokens();

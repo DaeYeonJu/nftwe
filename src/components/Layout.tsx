@@ -12,21 +12,21 @@ const Layout: FC = ({ children }) => {
         alignItems="center"
       >
         <Box>
-          <Text fontWeight="bold">h662-Animals</Text>
+          <Text fontWeight="bold">2022-Capstone</Text>
         </Box>
+        <Link to="sale-animal">
+          <Button size="sm" colorScheme="green">
+            Main
+          </Button>
+        </Link>
         <Link to="/">
           <Button size="sm" colorScheme="blue">
-            Main
+            Register
           </Button>
         </Link>
         <Link to="my-animal">
           <Button size="sm" colorScheme="red">
             My Animal
-          </Button>
-        </Link>
-        <Link to="sale-animal">
-          <Button size="sm" colorScheme="green">
-            Sale Animal
           </Button>
         </Link>
       </Flex>
