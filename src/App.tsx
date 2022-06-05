@@ -31,12 +31,9 @@ const App: FC = () => {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<Main account={account} />} />
+          <Route path="/" element={<SaleAnimal account={account} />} />
+          <Route path="main" element={<Main account={account} />} />
           <Route path="my-animal" element={<MyAnimal account={account} />} />
-          <Route
-            path="sale-animal"
-            element={<SaleAnimal account={account} />}
-          />
         </Routes>
       </Layout>
     </BrowserRouter>

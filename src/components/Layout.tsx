@@ -14,12 +14,12 @@ const Layout: FC = ({ children }) => {
         <Box>
           <Text fontWeight="bold">2022-Capstone</Text>
         </Box>
-        <Link to="sale-animal">
+        <Link to="/">
           <Button size="sm" colorScheme="green">
             Main
           </Button>
         </Link>
-        <Link to="/">
+        <Link to="main">
           <Button size="sm" colorScheme="blue">
             Register
           </Button>
