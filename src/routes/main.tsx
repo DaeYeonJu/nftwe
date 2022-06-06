@@ -13,7 +13,10 @@ const Main: FC<MainProps> = ({ account }) => {
     const onClickMint_org = async () => {
         try {
             if (!account) return;         
-                     {
+            const response = await mintAnimalTokenContract.methods
+                .mintAnimalToken()
+                .send({ from: account });
+            if (response.status){
                 const balanceLength = await mintAnimalTokenContract.methods
                     .balanceOf(account)
                     .call();
@@ -21,18 +24,15 @@ const Main: FC<MainProps> = ({ account }) => {
 
                 const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods
                     .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
-                    .call(), 10) / 5) * 5 + 1;
+                    .call(), 10) / 5) * 5 + 0;
 
                 const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods
                     .animalTypes(animalTokenId)
-                    .call(), 10) / 5) * 5 + 1);
+                    .call(), 10) / 5) * 5 + 0);
                 console.log(animalTokenId);
                 console.log(animalType);
 
                 setNewAnimalType(animalType);
-                const response = await mintAnimalTokenContract.methods
-                    .mintAnimalToken()
-                    .send({ from: account });
             }
         } catch (error) {
             console.error(error);
@@ -42,9 +42,42 @@ const Main: FC<MainProps> = ({ account }) => {
         try {
             if (!account) return;
 
-            
-           
+            const response = await mintAnimalTokenContract.methods
+                .mintAnimalToken()
+                .send({ from: account });
+            if (response.status)
              {
+                const balanceLength = await mintAnimalTokenContract.methods
+                    .balanceOf(account)
+                    .call();
+                console.log(balanceLength);
+
+                const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods
+                    .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
+                    .call(),10)/5)*5+1;
+
+                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods
+                    .animalTypes(animalTokenId)
+                    .call(),10)/5)*5+1);
+                console.log(animalTokenId);
+                console.log(animalType);
+
+                setNewAnimalType(animalType);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    const onClickMint_monet = async () => {
+        try {
+            if (!account) return;
+
+            const response = await mintAnimalTokenContract.methods
+                .mintAnimalToken()
+                .send({ from: account });
+
+            if (response.status)
+            {
                 const balanceLength = await mintAnimalTokenContract.methods
                     .balanceOf(account)
                     .call();
@@ -56,26 +89,25 @@ const Main: FC<MainProps> = ({ account }) => {
 
                 const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods
                     .animalTypes(animalTokenId)
-                    .call(),10)/5)*5+2);
+                    .call(), 10)/5)*5 + 2);
                 console.log(animalTokenId);
                 console.log(animalType);
 
                 setNewAnimalType(animalType);
-                const response = await mintAnimalTokenContract.methods
-                    .mintAnimalToken()
-                    .send({ from: account });
             }
         } catch (error) {
             console.error(error);
         }
     };
-    const onClickMint_monet = async () => {
+    const onClickMint_ukiyo = async () => {
         try {
             if (!account) return;
 
-            
+            const response = await mintAnimalTokenContract.methods
+                .mintAnimalToken()
+                .send({ from: account });
 
-         
+            if (response.status)
             {
                 const balanceLength = await mintAnimalTokenContract.methods
                     .balanceOf(account)
@@ -86,46 +118,11 @@ const Main: FC<MainProps> = ({ account }) => {
                     .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
                     .call(),10)/5)*5+3;
 
-                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods
-                    .animalTypes(animalTokenId)
-                    .call(), 10)/5)*5 + 3);
+                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call(),10)/5)*5+3);
                 console.log(animalTokenId);
                 console.log(animalType);
 
                 setNewAnimalType(animalType);
-                const response = await mintAnimalTokenContract.methods
-                    .mintAnimalToken()
-                    .send({ from: account });
-            }
-        } catch (error) {
-            console.error(error);
-        }
-    };
-    const onClickMint_ukiyo = async () => {
-        try {
-            if (!account) return;
-
-            
-
-            
-            {
-                const balanceLength = await mintAnimalTokenContract.methods
-                    .balanceOf(account)
-                    .call();
-                console.log(balanceLength);
-
-                const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods
-                    .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
-                    .call(),10)/5)*5+4;
-
-                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call(),10)/5)*5+4);
-                console.log(animalTokenId);
-                console.log(animalType);
-
-                setNewAnimalType(animalType);
-                const response = await mintAnimalTokenContract.methods
-                    .mintAnimalToken()
-                    .send({ from: account });
             }
         } catch (error) {
             console.error(error);
@@ -134,25 +131,24 @@ const Main: FC<MainProps> = ({ account }) => {
     const onClickMint_vangogh = async () => {
         try {
             if (!account) return;
-            
+            const response = await mintAnimalTokenContract.methods
+                .mintAnimalToken()
+                .send({ from: account });
 
-
+            if (response.status)
             {
                 const balanceLength = await mintAnimalTokenContract.methods
                     .balanceOf(account)
                     .call();
                 console.log(balanceLength);
 
-                const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods.tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1).call(),10)/5)*5+5;
-                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call(), 10) / 5) * 5 + 5);
+                const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods.tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1).call(),10)/5)*5+4;
+                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call(), 10) / 5) * 5 + 4);
             
                 console.log(animalTokenId);
                 console.log(animalType);
 
                 setNewAnimalType(animalType);
-                const response = await mintAnimalTokenContract.methods
-                    .mintAnimalToken()
-                    .send({ from: account });
             }
         } catch (error) {
             console.error(error);
@@ -166,7 +162,7 @@ const Main: FC<MainProps> = ({ account }) => {
                     alignItems="center"
                     direction="row"
                 >
-                    <Image w={150} h={150} src={`1.png`} alt="no" />
+                    <Image w={150} h={150} src={`0.png`} alt="no" />
                     <Box>
                         {newAnimalType ? (
                             <AnimalCard animalType={newAnimalType} />
