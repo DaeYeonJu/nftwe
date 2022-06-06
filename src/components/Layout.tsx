@@ -6,7 +6,7 @@ const Layout: FC = ({ children }) => {
   return (
     <Stack h="100vh">
       <Flex
-        bg="purple.200"
+        bg="yellow.100"
         p={4}
         justifyContent="space-around"
         alignItems="center"
@@ -26,7 +26,7 @@ const Layout: FC = ({ children }) => {
         </Link>
         <Link to="my-animal">
           <Button size="sm" colorScheme="red">
-            My Animal
+            My NFT
           </Button>
         </Link>
       </Flex>
