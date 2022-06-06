@@ -96,7 +96,7 @@ const MyAnimal: FC<MyAnimalProps> = ({ account }) => {
                 animalPrice={v.animalPrice}
                 saleStatus={saleStatus}
                 account={account}
-              />
+                />
             );
           })}
       </Grid>
