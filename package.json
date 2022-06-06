@@ -25,7 +25,7 @@
     "web3": "^1.6.1",
     "web3-utils": "^1.6.1"
   },
-  "homepage": "https://master--merry-sunflower-e16d41.netlify.app/main",
+  "homepage": "https://merry-sunflower-e16d41.netlify.app",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
