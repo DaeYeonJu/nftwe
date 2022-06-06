@@ -22,11 +22,13 @@ const Main: FC<MainProps> = ({ account }) => {
                     .call();
                 console.log(balanceLength);
 
-                const animalTokenId = await mintAnimalTokenContract.methods
+                const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods
                     .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
-                    .call();
+                    .call(), 10) / 5) * 5 + 1;
 
-                const animalType = await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call();
+                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods
+                    .animalTypes(animalTokenId)
+                    .call(), 10) / 5) * 5 + 1);
                 console.log(animalTokenId);
                 console.log(animalType);
 
@@ -52,11 +54,11 @@ const Main: FC<MainProps> = ({ account }) => {
 
                 const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods
                     .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
-                    .call(),10)/5)*5+1;
+                    .call(),10)/5)*5+2;
 
                 const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods
                     .animalTypes(animalTokenId)
-                    .call(),10)/5)*5+1);
+                    .call(),10)/5)*5+2);
                 console.log(animalTokenId);
                 console.log(animalType);
 
@@ -83,11 +85,11 @@ const Main: FC<MainProps> = ({ account }) => {
 
                 const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods
                     .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
-                    .call(),10)/5)*5+2;
+                    .call(),10)/5)*5+3;
 
                 const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods
                     .animalTypes(animalTokenId)
-                    .call(), 10)/5)*5 + 2);
+                    .call(), 10)/5)*5 + 3);
                 console.log(animalTokenId);
                 console.log(animalType);
 
@@ -114,9 +116,9 @@ const Main: FC<MainProps> = ({ account }) => {
 
                 const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods
                     .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
-                    .call(),10)/5)*5+3;
+                    .call(),10)/5)*5+4;
 
-                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call(),10)/5)*5+3);
+                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call(),10)/5)*5+4);
                 console.log(animalTokenId);
                 console.log(animalType);
 
@@ -140,8 +142,8 @@ const Main: FC<MainProps> = ({ account }) => {
                     .call();
                 console.log(balanceLength);
 
-                const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods.tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1).call(),10)/5)*5+4;
-                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call(), 10) / 5) * 5 + 4);
+                const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods.tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1).call(),10)/5)*5+5;
+                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call(), 10) / 5) * 5 + 5);
             
                 console.log(animalTokenId);
                 console.log(animalType);
