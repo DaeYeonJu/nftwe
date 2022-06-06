@@ -25,7 +25,7 @@
     "web3": "^1.6.1",
     "web3-utils": "^1.6.1"
   },
-  "homepage": "https://fantastic-malabi-b5517e.netlify.app/",
+  "homepage": "https://master--merry-sunflower-e16d41.netlify.app/main",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
