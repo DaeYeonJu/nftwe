@@ -16,12 +16,12 @@ const Layout: FC = ({ children }) => {
         </Box>
         <Link to="/">
           <Button size="sm" colorScheme="green">
-            Main
+            Register
           </Button>
         </Link>
         <Link to="main">
           <Button size="sm" colorScheme="blue">
-            Register
+            Main
           </Button>
         </Link>
         <Link to="my-animal">
