@@ -7,7 +7,8 @@ interface AnimalCardProps {
 
 const AnimalCard: FC<AnimalCardProps> = ({ animalType }) => {
   return (
-    <img src={process.env.PUBLIC_URL +`${animalType}.png`} alt="copy url" />
+    <img src={`${animalType}.png`} alt="Card" />
   );
 };
+
 export default AnimalCard;
