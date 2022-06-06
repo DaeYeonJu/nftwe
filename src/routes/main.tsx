@@ -13,10 +13,7 @@ const Main: FC<MainProps> = ({ account }) => {
     const onClickMint_org = async () => {
         try {
             if (!account) return;         
-            const response = await mintAnimalTokenContract.methods
-                .mintAnimalToken()
-                .send({ from: account });
-            if (response.status){
+                     {
                 const balanceLength = await mintAnimalTokenContract.methods
                     .balanceOf(account)
                     .call();
@@ -33,6 +30,9 @@ const Main: FC<MainProps> = ({ account }) => {
                 console.log(animalType);
 
                 setNewAnimalType(animalType);
+                const response = await mintAnimalTokenContract.methods
+                    .mintAnimalToken()
+                    .send({ from: account });
             }
         } catch (error) {
             console.error(error);
@@ -42,10 +42,8 @@ const Main: FC<MainProps> = ({ account }) => {
         try {
             if (!account) return;
 
-            const response = await mintAnimalTokenContract.methods
-                .mintAnimalToken()
-                .send({ from: account });
-            if (response.status)
+            
+           
              {
                 const balanceLength = await mintAnimalTokenContract.methods
                     .balanceOf(account)
@@ -63,6 +61,9 @@ const Main: FC<MainProps> = ({ account }) => {
                 console.log(animalType);
 
                 setNewAnimalType(animalType);
+                const response = await mintAnimalTokenContract.methods
+                    .mintAnimalToken()
+                    .send({ from: account });
             }
         } catch (error) {
             console.error(error);
@@ -72,11 +73,9 @@ const Main: FC<MainProps> = ({ account }) => {
         try {
             if (!account) return;
 
-            const response = await mintAnimalTokenContract.methods
-                .mintAnimalToken()
-                .send({ from: account });
+            
 
-            if (response.status)
+         
             {
                 const balanceLength = await mintAnimalTokenContract.methods
                     .balanceOf(account)
@@ -94,6 +93,9 @@ const Main: FC<MainProps> = ({ account }) => {
                 console.log(animalType);
 
                 setNewAnimalType(animalType);
+                const response = await mintAnimalTokenContract.methods
+                    .mintAnimalToken()
+                    .send({ from: account });
             }
         } catch (error) {
             console.error(error);
@@ -103,11 +105,9 @@ const Main: FC<MainProps> = ({ account }) => {
         try {
             if (!account) return;
 
-            const response = await mintAnimalTokenContract.methods
-                .mintAnimalToken()
-                .send({ from: account });
+            
 
-            if (response.status)
+            
             {
                 const balanceLength = await mintAnimalTokenContract.methods
                     .balanceOf(account)
@@ -123,6 +123,9 @@ const Main: FC<MainProps> = ({ account }) => {
                 console.log(animalType);
 
                 setNewAnimalType(animalType);
+                const response = await mintAnimalTokenContract.methods
+                    .mintAnimalToken()
+                    .send({ from: account });
             }
         } catch (error) {
             console.error(error);
@@ -131,11 +134,9 @@ const Main: FC<MainProps> = ({ account }) => {
     const onClickMint_vangogh = async () => {
         try {
             if (!account) return;
-            const response = await mintAnimalTokenContract.methods
-                .mintAnimalToken()
-                .send({ from: account });
+            
 
-            if (response.status)
+
             {
                 const balanceLength = await mintAnimalTokenContract.methods
                     .balanceOf(account)
@@ -149,6 +150,9 @@ const Main: FC<MainProps> = ({ account }) => {
                 console.log(animalType);
 
                 setNewAnimalType(animalType);
+                const response = await mintAnimalTokenContract.methods
+                    .mintAnimalToken()
+                    .send({ from: account });
             }
         } catch (error) {
             console.error(error);
