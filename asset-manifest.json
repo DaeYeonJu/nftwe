@@ -1,13 +1,13 @@
 {
-  "main.js": "/manflex/static/js/main.5bcd76bd.chunk.js",
-  "main.js.map": "/manflex/static/js/main.5bcd76bd.chunk.js.map",
-  "static/js/1.f95b33de.chunk.js": "/manflex/static/js/1.f95b33de.chunk.js",
-  "static/js/1.f95b33de.chunk.js.map": "/manflex/static/js/1.f95b33de.chunk.js.map",
-  "static/js/2.80793ec2.chunk.js": "/manflex/static/js/2.80793ec2.chunk.js",
-  "static/js/2.80793ec2.chunk.js.map": "/manflex/static/js/2.80793ec2.chunk.js.map",
-  "runtime~main.js": "/manflex/static/js/runtime~main.4af94c15.js",
-  "runtime~main.js.map": "/manflex/static/js/runtime~main.4af94c15.js.map",
-  "index.html": "/manflex/index.html",
-  "precache-manifest.75d8b6aa1fcc06ef3c226e55f9264726.js": "/manflex/precache-manifest.75d8b6aa1fcc06ef3c226e55f9264726.js",
-  "service-worker.js": "/manflex/service-worker.js"
+  "main.js": "/static/js/main.5bcd76bd.chunk.js",
+  "main.js.map": "/static/js/main.5bcd76bd.chunk.js.map",
+  "static/js/1.f95b33de.chunk.js": "/static/js/1.f95b33de.chunk.js",
+  "static/js/1.f95b33de.chunk.js.map": "/static/js/1.f95b33de.chunk.js.map",
+  "static/js/2.e6f7740f.chunk.js": "/static/js/2.e6f7740f.chunk.js",
+  "static/js/2.e6f7740f.chunk.js.map": "/static/js/2.e6f7740f.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.e931a02b.js",
+  "runtime~main.js.map": "/static/js/runtime~main.e931a02b.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.1200aada11341542df94723b414d9e60.js": "/precache-manifest.1200aada11341542df94723b414d9e60.js",
+  "service-worker.js": "/service-worker.js"
 }
