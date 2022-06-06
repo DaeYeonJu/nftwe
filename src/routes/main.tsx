@@ -22,14 +22,11 @@ const Main: FC<MainProps> = ({ account }) => {
                     .call();
                 console.log(balanceLength);
 
-                const animalTokenId = Math.floor(parseInt(await mintAnimalTokenContract.methods
+                const animalTokenId = await mintAnimalTokenContract.methods
                     .tokenOfOwnerByIndex(account, parseInt(balanceLength, 10) - 1)
-                    .call(),10)/5)*5;
+                    .call();
 
-                const animalType = String(Math.floor(parseInt(await mintAnimalTokenContract.methods
-                    .animalTypes(animalTokenId)
-                    .call(), 10) / 5) * 5)
-                    ;
+                const animalType = await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call();
                 console.log(animalTokenId);
                 console.log(animalType);
 
