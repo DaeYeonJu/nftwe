@@ -160,7 +160,6 @@ const Main: FC<MainProps> = ({ account }) => {
                     alignItems="center"
                     direction="row"
                 >
-                    <Image w={150} h={150} src={`images/${1}.png`} alt="Card" />
                     <Box>
                         {newAnimalType ? (
                             <AnimalCard animalType={newAnimalType} />
