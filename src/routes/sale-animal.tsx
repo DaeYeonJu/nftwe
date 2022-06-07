@@ -20,7 +20,7 @@ const SaleAnimal: FC<SaleAnimalProps> = ({ account }) => {
 
             const tempOnSaleArray: IMyAnimalCard[] = [];
 
-            for (let i = 0; i <3; i++) {
+            for (let i = 0; i <2; i++) {
                 const animalTokenId = await saleAnimalTokenContract.methods.onSaleAnimalTokenArray(i).call();
             
                 const animalType = await mintAnimalTokenContract.methods.animalTypes(animalTokenId).call();
